@@ -21,6 +21,17 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'secretconnection'
+    subscriptionId: '40082912-9b85-4009-a183-1f5cf2c69fdf'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'test-decker'
+    location: 'West Europe'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Incremental'
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
