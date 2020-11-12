@@ -31,11 +31,7 @@ name:
       vmImage: $(vmImageName)
     
     steps:
-- task: AzureAppServiceManage@0
-  inputs:
-    azureSubscription: 'c4616d8c-12ea-4b5f-b850-c97e7e804e15'
-    Action: 'Start Azure App Service'
-    WebAppName: 'my-app-decker'
+
     - task: Maven@3
       displayName: 'Maven Package'
       inputs:
