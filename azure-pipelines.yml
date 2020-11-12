@@ -21,6 +21,7 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
+name: 
 - stage: Build
   displayName: Build stage
   jobs:
@@ -30,6 +31,11 @@ stages:
       vmImage: $(vmImageName)
     
     steps:
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'secretconnection'
+    Action: 'Start Azure App Service'
+    WebAppName: 'my-app-decker'
     - task: Maven@3
       displayName: 'Maven Package'
       inputs:
