@@ -26,5 +26,5 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'secretconnection'
     appType: 'webAppLinux'
-    WebAppName: 'deckerjava'
+    WebAppName: 'my-app-decker'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
